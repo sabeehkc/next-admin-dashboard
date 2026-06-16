@@ -34,7 +34,7 @@ export function Navbar() {
         <div className="relative w-full max-w-sm hidden md:block">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-foreground" />
           <Input
-            placeholder="Search ledger..."
+            placeholder="Search..."
             className="h-10 w-full rounded-lg bg-accent/50 dark:bg-accent/10 border-none pl-10 focus:ring-1 focus:ring-foreground/20 transition-all font-medium"
           />
         </div>

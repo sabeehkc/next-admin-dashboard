@@ -35,7 +35,7 @@ export function GlobalSearch() {
       >
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground group-hover:text-primary transition-colors" />
         <div className="h-10 w-full rounded-xl border border-sidebar-border/10 bg-muted/30 px-10 py-2.5 text-xs font-bold text-muted-foreground transition-all focus:bg-background group-hover:bg-muted/50 flex items-center justify-between">
-          <span>Search the ledger...</span>
+          <span>Search...</span>
           <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 uppercase">
             <span className="text-xs">⌘</span>K
           </kbd>

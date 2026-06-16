@@ -1,12 +1,14 @@
 "use client"
 
-import { Plus, Download, Filter, Calendar } from "lucide-react"
+import { Plus, Download, Filter, Calendar, FileQuestion, Users, CreditCard } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { KPICard } from "@/components/dashboard/kpi-card"
 import { CashFlowChart } from "@/components/dashboard/cash-flow-chart"
 import { AlertsSection } from "@/components/dashboard/alerts-section"
 import { RecentTransactions } from "@/components/dashboard/recent-transactions"
 import { ActivityLog } from "@/components/dashboard/activity-log"
+import { StatWidget } from "@/components/dashboard/stat-widget"
+import { EmptyState } from "@/components/ui/empty-state"
 import { kpiMetrics } from "@/lib/data/mock-data"
 import { cn } from "@/lib/utils"
 import {
@@ -81,6 +83,18 @@ export default function DashboardPage() {
             </div>
             <RecentTransactions />
           </div>
+
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-base lg:text-lg font-black uppercase tracking-wider text-primary/80">Pending Reports</h2>
+            </div>
+            <EmptyState 
+              title="No Pending Reports"
+              description="You're all caught up! There are no pending reports to review at this time."
+              icon={<FileQuestion className="w-8 h-8" />}
+              action={<Button variant="outline" className="text-xs font-bold uppercase tracking-widest">Generate Report</Button>}
+            />
+          </div>
         </div>
 
         {/* Right Column (Narrow) */}
@@ -89,6 +103,25 @@ export default function DashboardPage() {
           
           <div className="rounded-xl border border-sidebar-border/10 p-5 lg:p-6 bg-card shadow-sm">
              <ActivityLog />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <StatWidget 
+              title="Active Users" 
+              value="2,854" 
+              icon={<Users className="w-4 h-4" />}
+              trend="up"
+              trendValue="12.5%"
+              className="p-4 lg:p-5"
+            />
+            <StatWidget 
+              title="Avg. Revenue" 
+              value="$452" 
+              icon={<CreditCard className="w-4 h-4" />}
+              trend="down"
+              trendValue="2.4%"
+              className="p-4 lg:p-5"
+            />
           </div>
           
           <div className="rounded-xl border border-sidebar-border/10 p-5 lg:p-6 bg-card shadow-sm space-y-6">
